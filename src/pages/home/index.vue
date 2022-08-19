@@ -1,18 +1,20 @@
 <template>
     <div class="home">
-        <HelloWorld :msg="msg" />
+        <!-- <HelloWorld :msg="msg" /> -->
         <div class="container" ref="container"></div>
+        <div class="map" ref="cesiumViewer"></div>
     </div>
 </template>
 
 <script>
 import * as THREE from 'three';
-import HelloWorld from '@/components/HelloWorld'
+import * as Cesium from 'cesium/Source/Cesium'
+// import HelloWorld from '@/components/HelloWorld'
 
 export default {
     name: 'home',
     components: {
-        HelloWorld,
+        // HelloWorld,
     },
     data () {
         return {
@@ -85,21 +87,41 @@ export default {
                 this.animate();
             })
         },
-        animate() {
-            requestAnimationFrame(this.animate);
-            // this.cube.rotation.x += 0.01;
-            // this.cube.rotation.y += 0.02;
-            this.renderer.render(this.scene, this.camera);
+        initMap(){
+            let viewer = new Cesium.Viewer(this.$refs.cesiumViewer, {
+                baseLayerPicker: false,
+                fullscreenButton: false,
+                geocoder: false,
+                homeButton: false,
+                animation: false,
+                infoBox: false,
+                sceneModePicker: false,
+                selectionIndicator: false,
+                // creditContainer: "creditBar",
+                skyBox: false,
+                skyAtmosphere: false,
+                timeline: false,
+                navigationHelpButton: false,
+                scene3DOnly: true,
+                allowDataSourcesToSuspendAnimation: false
+            })
+            // window.viewer = viewer
         }
     },
     created() {
-        this.initCanvas();
+        // this.initCanvas();
+        this.initMap();
     }
 }
 </script>
 
 <style scoped>
     .container {
+        width: 100vw;
+        height: 100vh;
+        margin: 0 auto;
+    }
+    .map {
         width: 100vw;
         height: 100vh;
         margin: 0 auto;

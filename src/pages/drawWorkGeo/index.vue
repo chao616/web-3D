@@ -10,9 +10,9 @@
 import * as THREE from 'three';
 import { VertexNormalsHelper } from 'three/examples/jsm/helpers/VertexNormalsHelper';
 
-import dataWork from '../../models/dizhitiDataBig.js';
-import dataWork1 from '../../models/dizhitiDataBig1.js';
-import dataSide from '../../models/dizhiticemianDataBig.js';
+// import dataWork from '../../models/dizhitiDataBig.js';
+// import dataWork1 from '../../models/dizhitiDataBig1.js';
+// import dataSide from '../../models/dizhiticemianDataBig.js';
 
 // 轨迹球控件，最常用的控件，可以使用鼠标轻松的移动、平移，缩放场景
 import { OrbitControls } from '../../utils/OrbitControls.js';
@@ -227,7 +227,7 @@ export default {
         }
     },
     created() {
-        this.init();
+        // this.init();
     }
 }
 </script>
