@@ -176,6 +176,51 @@ export default {
                     side: THREE.DoubleSide //两面可见 
                 } );
                 geometryWorkSide.center();//模型居中展示
+
+                // var uvs = [];
+                //纹理坐标算法
+                // for(var i=0; i<data.length;i+=3){
+                //     let u = (data[i] - this.minx)/(this.maxx - this.minx);
+                //     let v = (data[i+1] - this.miny)/(this.maxy - this.miny);
+                //     uvs.push(u);
+                //     uvs.push(v);
+                // }
+
+                /*纹理坐标*/
+                // var uvs = new Float32Array(uvs);
+                // var uvs = new Float32Array([
+                //     0,0, //图片左下角
+                //     1,0, //图片右下角
+                //     1,1, //图片右上角
+                //     0,1, //图片左上角
+                // ]);
+                // 设置几何体attributes属性的位置normal属性
+                // geometry.attributes.uv = new THREE.BufferAttribute(uvs, 2); //2个为一组,表示一个顶点的纹理坐标
+
+                // if(scene.children[scene.children.length - 1].geometry && scene.children[scene.children.length - 1].type == 'Mesh'){
+                //     let meshBox = scene.children[scene.children.length - 1];
+                //     // 将模型的中心点设置到canvas坐标系的中心点，保证模型显示是居中的，mesh就是操作的目标模型
+                //     let box = new THREE.Box3().setFromObject(meshBox); // 获取模型的包围盒
+                //     let mdlen = box.max.x - box.min.x; // 模型长度
+                //     let mdwid = box.max.z - box.min.z; // 模型宽度
+                //     let mdhei = box.max.y - box.min.y; // 模型高度
+                //     let x1 = box.min.x + mdlen / 2; // 模型中心点坐标X
+                //     let y1 = box.min.y + mdhei / 2; // 模型中心点坐标Y
+                //     let z1 = box.min.z + mdwid / 2; // 模型中心点坐标Z
+                //     mesh.position.set(-x1, -y1, -z1); // 将模型进行偏移
+                //     console.log(y1);
+                // }else{
+                //     // 将模型的中心点设置到canvas坐标系的中心点，保证模型显示是居中的，mesh就是操作的目标模型
+                //     let box = new THREE.Box3().setFromObject(mesh); // 获取模型的包围盒
+                //     let mdlen = box.max.x - box.min.x; // 模型长度
+                //     let mdwid = box.max.z - box.min.z; // 模型宽度
+                //     let mdhei = box.max.y - box.min.y; // 模型高度
+                //     let x1 = box.min.x + mdlen / 2; // 模型中心点坐标X
+                //     let y1 = box.min.y + mdhei / 2; // 模型中心点坐标Y
+                //     let z1 = box.min.z + mdwid / 2; // 模型中心点坐标Z
+                //     mesh.position.set(-x1, -y1, -z1); // 将模型进行偏移
+                // }
+
                 var meshWorkSide = new THREE.Mesh( geometryWorkSide, materialWorkSide );
                 meshWorkSide.scale.set(0.01, 0.01, 0.05);
                 meshWorkSide.rotation.x = 1.5*Math.PI;

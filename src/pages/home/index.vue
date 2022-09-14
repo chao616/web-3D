@@ -8,7 +8,6 @@
 
 <script>
 import * as THREE from 'three';
-import * as Cesium from 'cesium/Source/Cesium'
 // import HelloWorld from '@/components/HelloWorld'
 
 export default {
@@ -110,7 +109,7 @@ export default {
     },
     created() {
         // this.initCanvas();
-        this.initMap();
+        // this.initMap();
     }
 }
 </script>

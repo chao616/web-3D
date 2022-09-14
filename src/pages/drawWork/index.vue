@@ -294,6 +294,23 @@ export default {
                     alpha:true,
                     logarithmicDepthBuffer:true
                 });
+
+                // 辅助网格
+                // var anisotropy = renderer.capabilities.getMaxAnisotropy();
+                // const box = new THREE.Box3Grid({
+                // anisotropy,
+                // minRange: new THREE.Vector3(0, 0, 0),
+                // maxRange: new THREE.Vector3(100, 100, 100),
+                // fontSize: 4,
+                // lineWidth: 1,
+                // scale: 10,
+                // fontColor: new THREE.Color(0x000000),
+                // xName: 'X',
+                // yName: 'Y',
+                // zName: 'Z'
+                // }, null, (value) => value)
+                // box.addToScene(scene)
+
 				renderer.setPixelRatio( window.devicePixelRatio );
 				renderer.setSize( window.innerWidth, window.innerHeight );
                 renderer.setClearColor(0x00ff00, 0);
